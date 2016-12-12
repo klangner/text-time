@@ -1,7 +1,9 @@
--- | TimeSeries library
-module Data.Time
-    ( module Data.TimeSeries.Series
+{-# LANGUAGE OverloadedStrings #-}
+
+-- | Parser for ISO date from ByteString
+module Data.ByteString.Time
+    ( module Data.ByteString.Time.Parsers
     ) where
 
 
-import Data.TimeSeries.Parsers
+import Data.ByteString.Time.Parsers

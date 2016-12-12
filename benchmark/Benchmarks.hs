@@ -1,14 +1,14 @@
 
 import Criterion.Main
-import Data.Time (UTCTime)
-import Data.Time.Clock.POSIX (posixSecondsToUTCTime)
+import Data.ByteString
+import Data.Time
+import Data.ByteString.Time
 
 
 main :: IO ()
 main = defaultMain
---     [ bgroup "Big series"
---         [ bench "size"  $ nf TS.size bigSeries
---         , bench "valueAt"  $ nf (\xs -> TS.valueAt xs lastIndex) bigSeries
---         , bench "slice"  $ nf (\xs -> TS.valueAt (TS.slice xs (index 2) lastIndex) (index 1)) bigSeries
---         ]
---     ]
+    [ bgroup "Time parsers"
+        [ bench "Haskell String"  $ nf parseTimeOrError True defaultTimeLocale "%Y-%m-%dT%H:%M:%S" "2016-12-12T20:56:34"
+--         , bench "ByteString"  $ nf TS.size bigSeries
+        ]
+    ]

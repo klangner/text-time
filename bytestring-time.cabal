@@ -7,7 +7,7 @@ Extra-Source-Files:
                 README.md,
                 CHANGES.md,
                 LICENSE,
-                benchmark/*.hs,
+                benchmark/*.hs
 description:
     Parser for ISO date from ByteString
 homepage:       https://github.com/klangner/bytestring-time

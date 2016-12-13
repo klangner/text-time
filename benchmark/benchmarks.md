@@ -35,6 +35,7 @@ firefox output/bench.html
 ## Latest benchmark:
 
 ```
+benchmarking Time parsers/String
 time                 15.50 μs   (15.03 μs .. 16.06 μs)
                      0.994 R²   (0.988 R² .. 0.999 R²)
 mean                 15.31 μs   (15.12 μs .. 15.63 μs)

@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/klangner/bytestring-time.svg?branch=master)](https://travis-ci.org/klangner/bytestring-time)
-[![Hackage](https://img.shields.io/hackage/v/bytestring-time.svg)](https://hackage.haskell.org/package/bytestring-time)
+[![Build Status](https://travis-ci.org/klangner/text-time.svg?branch=master)](https://travis-ci.org/klangner/text-time)
+[![Hackage](https://img.shields.io/hackage/v/text-time.svg)](https://hackage.haskell.org/package/text-time)
 
-# Welcome to ByteString Time library
+# Welcome to Text Time library
 
-This library contains fast parser for ISO date in ByteString into UTCTime data
+This library contains fast parser for ISO date from Text into UTCTime data
 
 
 
@@ -22,11 +22,11 @@ We are happy to receive bug reports, fixes, documentation enhancements,
 and other improvements.
 
 Please report bugs via the
-[github issue tracker](http://github.com/klangner/bytestring-time/issues).
+[github issue tracker](http://github.com/klangner/text-time/issues).
 
-Master [git repository](http://github.com/klangner/bytestring-time):
+Master [git repository](http://github.com/klangner/text-time):
 
-* `git clone https://github.com/klangner/bytestring-time.git`
+* `git clone https://github.com/klangner/text-time.git`
 
 
 # Redistributing

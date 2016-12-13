@@ -40,7 +40,7 @@ test-suite unit-tests
                     base >= 4 && <5,
                     hspec >=2 && <3,
                     QuickCheck >=2.6 && <3,
-                    Cabal < 2,
+                    Cabal >=1.16.0 && <2,
                     attoparsec < 0.14,
                     text < 2,
                     time < 2

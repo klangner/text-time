@@ -25,7 +25,6 @@ library
   build-depends:
                     base >= 4.7 && < 5,
                     attoparsec < 0.14,
-                    bytestring < 0.11,
                     text < 2,
                     time < 2
   exposed-modules:
@@ -43,7 +42,6 @@ test-suite unit-tests
                     QuickCheck >=2.6 && <3,
                     Cabal >=1.16.0 && <2,
                     attoparsec < 0.14,
-                    bytestring < 0.11,
                     text < 2,
                     time < 2
   other-modules:

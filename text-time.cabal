@@ -1,6 +1,6 @@
-name:           bytestring-time
+name:           text-time
 version:        0.1.0
-synopsis:       Library for Time parsing from ByteString
+synopsis:       Library for Time parsing from Text into UTCTime
 License:        BSD3
 License-file:   LICENSE
 Extra-Source-Files:
@@ -9,8 +9,8 @@ Extra-Source-Files:
                 LICENSE,
                 benchmark/*.hs
 description:
-    Parser for ISO date from ByteString
-homepage:       https://github.com/klangner/bytestring-time
+    Fast parser for ISO date from Text to UTCTime
+homepage:       https://github.com/klangner/text-time
 author:         Krzysztof Langner
 maintainer:     klangner@gmail.com
 category:       Data
@@ -19,7 +19,7 @@ cabal-version:  >=1.10
 
 source-repository head
   type:     git
-  location: https://github.com/klangner/bytestring-time
+  location: https://github.com/klangner/text-time
 
 library
   hs-source-dirs:   src
@@ -31,9 +31,9 @@ library
                     text < 2,
                     time < 2
   exposed-modules:
-                    Data.ByteString.Time
+                    Data.Text.Time
   other-modules:
-                    Data.ByteString.Time.Parsers
+                    Data.Text.Time.Parsers
 
 test-suite unit-tests
   type:             exitcode-stdio-1.0
@@ -48,8 +48,8 @@ test-suite unit-tests
                     text < 2,
                     time < 2
   other-modules:
-                    Data.ByteString.Time,
-                    Data.ByteString.TimeSpec
+                    Data.Text.Time,
+                    Data.Text.TimeSpec
   hs-source-dirs:
                     src,
                     test-src

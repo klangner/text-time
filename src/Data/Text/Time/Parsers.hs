@@ -1,5 +1,5 @@
 
-module Data.ByteString.Time.Parsers
+module Data.Text.Time.Parsers
     ( parseISODateTime
     , parseUTCTimeOrError
     ) where

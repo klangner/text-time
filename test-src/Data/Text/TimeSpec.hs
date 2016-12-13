@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
-module Data.ByteString.TimeSpec (spec) where
+module Data.Text.TimeSpec (spec) where
 
-import Data.ByteString.Time
+import Data.Text.Time
 import Test.Hspec
 import Data.Time
 

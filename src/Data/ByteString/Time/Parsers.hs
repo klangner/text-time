@@ -12,9 +12,13 @@ import           Data.Bits ((.&.))
 import           Data.Char (isDigit, ord)
 import qualified Data.Text as T
 import           Data.Time ( Day
+                           , TimeOfDay
                            , UTCTime(..)
                            , fromGregorian
                            , fromGregorianValid
+                           , makeTimeOfDayValid
+                           , midnight
+                           , timeOfDayToTime
                            )
 
 
@@ -41,8 +45,9 @@ parseUTCTimeOrError = A.parseOnly getUTCTime
 getUTCTime :: A.Parser UTCTime
 getUTCTime = do
     day  <- getDay
-    time <- pure 0 --((A.char ' ' <|> A.char 'T') *> getTimeOfDay) <|> pure 0
-    return (UTCTime day time)
+    time <- ((A.char ' ' <|> A.char 'T') *> getTimeOfDay) <|> pure midnight
+    let time' = timeOfDayToTime time
+    return (UTCTime day time')
 
 
 -- | Date parser
@@ -57,6 +62,27 @@ getDay = do
     case fromGregorianValid year month day of
       Nothing -> fail "invalid date"
       Just x  -> return $! x
+
+
+getTimeOfDay :: A.Parser TimeOfDay
+getTimeOfDay = do
+    hour   <- digits "hours"
+    _      <- A.char ':'
+    minute <- digits "minutes"
+    -- Allow omission of seconds.  If seconds is omitted, don't try to
+    -- parse the sub-second part.
+    (sec,subsec)
+           <- ((,) <$> (A.char ':' *> digits "seconds") <*> fract) <|> pure (0,0)
+
+    let picos' = sec + subsec
+
+    case makeTimeOfDayValid hour minute picos' of
+      Nothing -> fail "invalid time of day"
+      Just x  -> return $! x
+
+    where
+      fract =
+        (A.char '.' *> (decimal <$> A.takeWhile1 isDigit)) <|> pure 0
 
 
 toNum :: Num n => T.Text -> n
@@ -75,3 +101,7 @@ digits msg = do
   then return $! (10 * digit x + digit y)
   else fail (msg ++ " is not 2 digits")
 {-# INLINE digits #-}
+
+decimal :: Fractional a => T.Text -> a
+decimal str = toNum str / 10^(T.length str)
+{-# INLINE decimal #-}

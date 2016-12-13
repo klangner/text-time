@@ -1,4 +1,4 @@
 .idea
-bytestring-time.iml
+*.iml
 .stack-work
 benchmark/output

@@ -24,10 +24,14 @@ library
   ghc-options:      -Wall
   build-depends:
                     base >= 4.7 && < 5,
+                    attoparsec < 0.14,
                     bytestring < 0.11,
+                    text < 2,
                     time < 2
   exposed-modules:
                     Data.ByteString.Time
+  other-modules:
+                    Data.ByteString.Time.Parsers
 
 test-suite unit-tests
   type:             exitcode-stdio-1.0
@@ -38,7 +42,9 @@ test-suite unit-tests
                     hspec >=2 && <3,
                     QuickCheck >=2.6 && <3,
                     Cabal >=1.16.0 && <2,
+                    attoparsec < 0.14,
                     bytestring < 0.11,
+                    text < 2,
                     time < 2
   other-modules:
                     Data.ByteString.Time,

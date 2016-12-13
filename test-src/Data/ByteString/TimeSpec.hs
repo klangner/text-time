@@ -14,5 +14,11 @@ spec = do
 
   describe "Parsers" $ do
 
-    it "iso year" $ do
-        parseISODateTime "2014" `shouldBe` UTCTime (fromGregorian 1456 1 23) 4000
+    it "iso format: YYYY" $ do
+        parseISODateTime "2014" `shouldBe` UTCTime (fromGregorian 2014 1 1) 0
+
+    it "iso format: YYYY-MM" $ do
+        parseISODateTime "2014-04" `shouldBe` UTCTime (fromGregorian 2014 4 1) 0
+
+    it "iso format: YYYY-MM-DD" $ do
+        parseISODateTime "2014-04-23" `shouldBe` UTCTime (fromGregorian 2014 4 23) 0

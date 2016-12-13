@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/klangner/bytestring-time.svg?branch=master)](https://travis-ci.org/klangner/bytestring-time)
 [![Hackage](https://img.shields.io/hackage/v/bytestring-time.svg)](https://hackage.haskell.org/package/bytestring-time)
 
-# Welcome to ByteString Text library
+# Welcome to ByteString Time library
 
 This library contains fast parser for ISO date in ByteString into UTCTime data
 

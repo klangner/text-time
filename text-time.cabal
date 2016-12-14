@@ -1,5 +1,5 @@
 name:           text-time
-version:        0.1.0
+version:        0.2.0
 synopsis:       Library for Time parsing from Text into UTCTime
 License:        BSD3
 License-file:   LICENSE
@@ -9,7 +9,7 @@ Extra-Source-Files:
                 LICENSE,
                 benchmark/*.hs
 description:
-    Fast parser for ISO date from Text to UTCTime
+    Fast parser and formatter for ISO date to and from Text
 homepage:       https://github.com/klangner/text-time
 author:         Krzysztof Langner
 maintainer:     klangner@gmail.com
@@ -28,12 +28,14 @@ library
   build-depends:
                     base >= 4.7 && < 5,
                     attoparsec < 0.14,
+                    formatting < 7,
                     text < 2,
                     time < 2
   exposed-modules:
                     Data.Text.Time
   other-modules:
-                    Data.Text.Time.Parsers
+                    Data.Text.Time.Parse
+                    Data.Text.Time.Format
 
 test-suite unit-tests
   type:             exitcode-stdio-1.0
@@ -45,9 +47,12 @@ test-suite unit-tests
                     QuickCheck >=2.6 && <3,
                     Cabal >=1.16.0 && <2,
                     attoparsec < 0.14,
+                    formatting < 7,
                     text < 2,
                     time < 2
   other-modules:
+                    Data.Text.Time.Parse
+                    Data.Text.Time.Format
                     Data.Text.Time,
                     Data.Text.TimeSpec
   hs-source-dirs:

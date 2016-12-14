@@ -3,7 +3,7 @@
 
 # Welcome to Text Time library
 
-This library contains fast parser for ISO date from Text into UTCTime data
+This library contains fast parser and formatter for iso dates in Text.
 
 
 

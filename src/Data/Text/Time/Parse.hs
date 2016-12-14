@@ -1,10 +1,10 @@
+-- | This code is adapted from sqlite-simple package
 
-module Data.Text.Time.Parsers
+module Data.Text.Time.Parse
     ( parseISODateTime
     , parseUTCTimeOrError
     ) where
 
--- import Prelude
 import           Control.Applicative
 import           Control.Monad (when)
 import qualified Data.Attoparsec.Text as A
@@ -23,7 +23,6 @@ import           Data.Time ( Day
 
 
 -- | Parse ISO date. If date can't be parsed then this function will return default value instead of error
--- Adapted from sqlite-simple package
 parseISODateTime :: T.Text -> UTCTime
 parseISODateTime str =
     case parseUTCTimeOrError str of

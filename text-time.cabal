@@ -1,5 +1,5 @@
 name:           text-time
-version:        0.2.0
+version:        0.3.0
 synopsis:       Library for Time parsing from Text into UTCTime
 License:        BSD3
 License-file:   LICENSE

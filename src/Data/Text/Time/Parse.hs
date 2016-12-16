@@ -1,5 +1,6 @@
--- | This code is adapted from sqlite-simple package
+{-# LANGUAGE OverloadedStrings #-}
 
+-- | This code is adapted from sqlite-simple package
 module Data.Text.Time.Parse
     ( parseISODateTime
     , parseUTCTimeOrError
@@ -53,7 +54,6 @@ getUTCTime = do
 getDay :: A.Parser Day
 getDay = do
     yearStr <- A.takeWhile isDigit
-    when (T.length yearStr < 4) (fail "year must consist of at least 4 digits")
 
     let year = toNum yearStr
     month <- (A.char '-' *> digits "month") <|> pure 1

@@ -3,8 +3,7 @@
 
 # Welcome to Text Time library
 
-This library contains fast parser and formatter for iso dates in Text.
-
+This library contains fast parser and formatter for iso dates between UTCTime and Text types.
 
 
 ## Installation
@@ -14,7 +13,6 @@ stack setup
 stack build
 stack test
 ```
-
 
 # Join in!
 
@@ -31,4 +29,4 @@ Master [git repository](http://github.com/klangner/text-time):
 
 # Redistributing
 
-bytestring-time source code is distributed under the BSD3 License.
+text-time source code is distributed under the BSD3 License.

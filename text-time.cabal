@@ -28,7 +28,7 @@ library
   build-depends:
                     base >= 4.7 && < 5,
                     attoparsec < 0.14,
-                    formatting < 7,
+                    formatting < 8,
                     text < 2,
                     time < 2
   exposed-modules:
@@ -47,7 +47,7 @@ test-suite unit-tests
                     QuickCheck >=2.6 && <3,
                     Cabal >=1.16.0 && <4,
                     attoparsec < 0.14,
-                    formatting < 7,
+                    formatting < 8,
                     text < 2,
                     time < 2
   other-modules:

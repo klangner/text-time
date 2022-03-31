@@ -27,7 +27,7 @@ library
   ghc-options:      -Wall
   build-depends:
                     base >= 4.7 && < 5,
-                    attoparsec < 0.14,
+                    attoparsec < 0.15,
                     formatting < 8,
                     text < 2,
                     time < 2
@@ -46,7 +46,7 @@ test-suite unit-tests
                     hspec >=2 && <3,
                     QuickCheck >=2.6 && <3,
                     Cabal >=1.16.0 && <4,
-                    attoparsec < 0.14,
+                    attoparsec < 0.15,
                     formatting < 8,
                     text < 2,
                     time < 2

@@ -29,7 +29,7 @@ library
                     base >= 4.7 && < 5,
                     attoparsec < 0.15,
                     formatting < 8,
-                    text < 2,
+                    text < 3,
                     time < 2
   exposed-modules:
                     Data.Text.Time
@@ -48,7 +48,7 @@ test-suite unit-tests
                     Cabal >=1.16.0 && <4,
                     attoparsec < 0.15,
                     formatting < 8,
-                    text < 2,
+                    text < 3,
                     time < 2
   other-modules:
                     Data.Text.Time.Parse
